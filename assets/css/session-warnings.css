@@ -1,0 +1,333 @@
+/* Session Warning Modal Styles */
+.session-warning-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.session-warning-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.session-warning-modal .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.session-warning-modal.show .modal-content {
+    transform: scale(1);
+}
+
+.session-warning-modal .warning-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.session-warning-modal h3 {
+    color: #dc3545;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.session-warning-modal p {
+    color: #6c757d;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.session-warning-modal .modal-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.session-warning-modal .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.session-warning-modal .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.session-warning-modal .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.session-warning-modal .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.session-warning-modal .btn-secondary:hover {
+    background-color: #545b62;
+    transform: translateY(-2px);
+}
+
+/* Session Expired Message */
+.session-expired-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #dc3545;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+    z-index: 9998;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+}
+
+.session-expired-message.show {
+    transform: translateX(0);
+}
+
+.session-expired-message .message-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.session-expired-message .message-content p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Session Info Display */
+.session-info {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.session-info h4 {
+    margin: 0 0 10px 0;
+    color: #495057;
+    font-size: 1.1em;
+}
+
+.session-info .info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.session-info .info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.session-info .info-label {
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.session-info .info-value {
+    color: #495057;
+}
+
+/* Session Timeout Warning */
+.session-timeout-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.session-timeout-warning .warning-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.session-timeout-warning .warning-icon {
+    font-size: 18px;
+}
+
+.session-timeout-warning .extend-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.session-timeout-warning .extend-btn:hover {
+    background: #218838;
+}
+
+/* Session Status Bar */
+.session-status-bar {
+    background: #e9ecef;
+    border-bottom: 1px solid #dee2e6;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    color: #6c757d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.session-status-bar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.session-status-bar .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.session-status-bar .time-remaining {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .session-warning-modal .modal-content {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .session-warning-modal .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .session-warning-modal .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .session-expired-message {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+    
+    .session-status-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Session Activity Indicator */
+.session-activity-indicator {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #28a745;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transition: all 0.3s ease;
+    z-index: 9997;
+}
+
+.session-activity-indicator:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.session-activity-indicator.inactive {
+    background: #6c757d;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
