@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Bill | Sunrise Dental Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" class="app">
+    <div id="page-content">
+        <section class="card panel no-print">
+            <p class="hint">Total = consultation fee (LKR 2,500) + treatment cost. Consultation-only visits are not charged a second consultation fee.</p>
+            <form id="previewForm" class="search-row">
+                <input id="appointmentNumber" required placeholder="Appointment number">
+                <button class="btn btn-primary" type="submit">Preview bill</button>
+            </form>
+            <div id="billAlert" class="alert"></div>
+            <div class="actions">
+                <button class="btn btn-ghost" id="generateBtn" type="button">Save bill</button>
+                <button class="btn btn-print" id="printBtn" type="button">Print receipt</button>
+            </div>
+        </section>
+        <section id="receipt" class="card receipt hidden">
+            <div class="receipt-head">
+                <div>
+                    <strong>Sunrise Dental Clinic</strong><br>
+                    Galle Road, Colombo<br>
+                    Tel: 011-2345678
+                </div>
+                <div>
+                    Bill: <span id="rBillNo"></span><br>
+                    Appointment: <span id="rApptNo"></span>
+                </div>
+            </div>
+            <p><strong>Patient:</strong> <span id="rPatient"></span><br>
+                <strong>Address:</strong> <span id="rAddress"></span><br>
+                <strong>Contact:</strong> <span id="rPhone"></span></p>
+            <p><strong>Dentist:</strong> <span id="rDentist"></span><br>
+                <strong>Treatment:</strong> <span id="rTreatment"></span><br>
+                <strong>Visit:</strong> <span id="rWhen"></span></p>
+            <table>
+                <tr><td>Consultation fee</td><td id="rConsult"></td></tr>
+                <tr><td>Treatment cost</td><td id="rTreat"></td></tr>
+                <tr><td><strong>Total payable</strong></td><td><strong id="rTotal"></strong></td></tr>
+                <tr><td>Payment status</td><td id="rStatus"></td></tr>
+            </table>
+            <p class="hint">Thank you for choosing Sunrise Dental Clinic. Keep this receipt for your records.</p>
+        </section>
+    </div>
+</div>
+<script src="js/app.js"></script>
+<script src="js/bill.js"></script>
+</body>
+</html>

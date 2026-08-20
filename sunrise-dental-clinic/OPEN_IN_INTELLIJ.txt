@@ -1,0 +1,46 @@
+OPEN IN INTELLIJ — READ THIS FIRST
+=================================
+
+The error "Could not find or load main class" happens when IntelliJ
+runs Java with no project classpath. Do not click Run on a single
+.java file until Maven has imported the project.
+
+FIX (do these in order)
+-----------------------
+1. Close the current IntelliJ window.
+
+2. File → Open → select the folder sunrise-dental-clinic
+   (the folder that CONTAINS pom.xml and run.bat).
+   Do not open the parent Election folder. Do not open one .java file.
+
+3. If IntelliJ asks "Load Maven Project?" click Trust / Load.
+
+4. View → Tool Windows → Maven
+   Click the Reload All Maven Projects button (two arrows).
+   Wait until "sunrise-dental-clinic" appears and dependencies finish.
+
+5. File → Project Structure → Project
+   SDK = 21 (your C:\jdk-21)
+   Language level = 17
+   Apply → OK
+
+6. Build → Rebuild Project
+
+7. Top-right run menu → choose "Run Sunrise Dental Clinic"
+   (this is a Maven run, not a green-triangle on HTML).
+   Click the green Run button.
+
+8. Open http://localhost:8080/
+   Login: admin / Admin@123
+
+EASIEST FALLBACK (no IntelliJ run button)
+-----------------------------------------
+Double-click run.bat in the project folder.
+Or in IntelliJ Terminal:
+
+  mvnw.cmd compile exec:java
+
+If JAVA_HOME is missing, run.bat already tries C:\jdk-21.
+
+Login: admin / Admin@123    or    staff / Staff@123
+Start MySQL in XAMPP and import database\sunrise_dental.sql first.

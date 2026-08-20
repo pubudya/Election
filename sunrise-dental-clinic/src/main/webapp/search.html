@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Appointment | Sunrise Dental Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app" class="app">
+    <div id="page-content">
+        <section class="card panel">
+            <form id="searchForm" class="search-row">
+                <input id="appointmentNumber" required placeholder="Enter appointment number, e.g. SDC-20260820-001">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+            <div id="searchAlert" class="alert"></div>
+            <div id="details"></div>
+        </section>
+        <section class="card panel" style="margin-top:18px">
+            <h2>All appointments</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Patient</th>
+                        <th>Dentist</th>
+                        <th>Date & time</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody id="listBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="js/app.js"></script>
+<script src="js/appointments.js"></script>
+</body>
+</html>

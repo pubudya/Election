@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Login | Sunrise Dental Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="login-shell">
+    <section class="login-art">
+        <div>
+            <div class="tooth-mark">☀</div>
+            <h1>Care that starts on time.</h1>
+            <p>Sunrise Dental Clinic uses this staff portal to register patients, prevent double bookings, keep records safe, and print accurate bills.</p>
+        </div>
+        <div class="login-meta">
+            <div>Colombo, Sri Lanka</div>
+            <div>Clinic hours 8:00 AM – 6:00 PM</div>
+        </div>
+    </section>
+    <section class="login-panel">
+        <form class="card login-card" id="loginForm">
+            <div class="eyebrow">Authorized staff only</div>
+            <h2>Sign in</h2>
+            <p class="hint">Enter your clinic username and password to open the appointment desk.</p>
+            <div id="loginAlert" class="alert"></div>
+            <div class="field">
+                <label for="username">Username</label>
+                <input id="username" name="username" autocomplete="username" required>
+            </div>
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Login</button>
+            <p class="hint" style="margin:18px 0 0">Demo accounts: <strong>admin / Admin@123</strong> and <strong>staff / Staff@123</strong></p>
+        </form>
+    </section>
+</div>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

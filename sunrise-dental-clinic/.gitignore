@@ -1,0 +1,11 @@
+target/
+.idea/*
+!.idea/modules.xml
+!.idea/misc.xml
+!.idea/compiler.xml
+!.idea/encodings.xml
+!.idea/runConfigurations/
+!.idea/runConfigurations/**
+*.log
+.DS_Store
+Thumbs.db
