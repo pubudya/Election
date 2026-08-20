@@ -1,9 +1,13 @@
 # Sunrise Dental Clinic (Java / Maven)
 
-The full appointment and patient management system lives in:
+Download the IntelliJ-ready project as **one zip**:
 
-**[sunrise-dental-clinic/](sunrise-dental-clinic/)**
+**[sunrise-dental-clinic.zip](sunrise-dental-clinic.zip)**
 
-- Open that folder in IntelliJ IDEA (it contains `pom.xml`).
-- Follow `sunrise-dental-clinic/INTELLIJ_SETUP.md` for XAMPP, Tomcat 10.1, packages, and file creation.
-- Staff login: `admin` / `Admin@123` or `staff` / `Staff@123`.
+Unzip it, then in IntelliJ: **File → Open** → the `sunrise-dental-clinic` folder (the one with `pom.xml`). Read `OPEN_IN_INTELLIJ.txt` inside the zip.
+
+The same project source is also in **[sunrise-dental-clinic/](sunrise-dental-clinic/)**.
+
+- Staff login: `admin` / `Admin@123` or `staff` / `Staff@123`
+- Database script: `sunrise-dental-clinic/database/sunrise_dental.sql`
+- Setup guide: `sunrise-dental-clinic/INTELLIJ_SETUP.md`
