@@ -26,15 +26,20 @@ Extra features: dashboard statistics, double-booking prevention, appointment can
 - IntelliJ IDEA (Community or Ultimate)
 - Apache Maven (bundled with IntelliJ is enough)
 - XAMPP (MySQL + phpMyAdmin)
-- Apache Tomcat **10.1.x** (Jakarta Servlet 6 — not Tomcat 9)
 
-## Quick start
+You do **not** need a separate Tomcat install to run the project. `SunriseDentalApp` starts an embedded Tomcat when you click Run.
 
-1. Import `database/sunrise_dental.sql` in phpMyAdmin.
-2. Confirm `src/main/resources/db.properties` matches your XAMPP MySQL user/password.
-3. Open the `sunrise-dental-clinic` folder in IntelliJ as a Maven project.
-4. Deploy to Tomcat 10.1 (see **INTELLIJ_SETUP.md**).
-5. Open `http://localhost:8080/sunrise-dental-clinic/`
+## Quick start in IntelliJ
+
+If IntelliJ says **“file in the editor is not runnable”**, you clicked HTML, CSS, or a servlet. Those files are not programs.
+
+1. Import `database/sunrise_dental.sql` in phpMyAdmin (start MySQL in XAMPP).
+2. **File → Open** the `sunrise-dental-clinic` folder (the one with `pom.xml`).
+3. Wait for Maven import. Set Project SDK to 17+.
+4. Open `src/main/java/com/sunrisedental/SunriseDentalApp.java`.
+5. Click the green Run triangle next to `main`.
+6. Browser: `http://localhost:8080/`  
+   Login: `admin` / `Admin@123`
 
 ## Project structure
 
@@ -44,6 +49,7 @@ sunrise-dental-clinic/
 ├── database/sunrise_dental.sql
 ├── INTELLIJ_SETUP.md          ← create packages/files in IntelliJ, Tomcat, XAMPP
 ├── src/main/java/com/sunrisedental/
+│   ├── SunriseDentalApp.java  ← click Run on this file
 │   ├── model/                 User, Appointment, Dentist, Treatment, Bill
 │   ├── dao/                   DBConnection + DAO classes
 │   ├── servlet/               REST-style JSON APIs

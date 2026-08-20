@@ -1,6 +1,8 @@
 # IntelliJ IDEA setup — Sunrise Dental Clinic
 
-This guide shows how to open the ready Maven project **and** how to recreate the same packages and files by hand in IntelliJ. Use Tomcat **10.1** (not 9) because the servlets use `jakarta.servlet`.
+This guide shows how to open the ready Maven project **and** how to recreate the same packages and files by hand in IntelliJ.
+
+If IntelliJ says **“file in the editor is not runnable”**, open and run `SunriseDentalApp.java`. Do not click Run on `index.html` or a servlet class.
 
 ---
 
@@ -9,7 +11,7 @@ This guide shows how to open the ready Maven project **and** how to recreate the
 1. Install **JDK 17+** (Eclipse Temurin or Oracle).
 2. Install **IntelliJ IDEA** (Community is enough).
 3. Install **XAMPP** and start **Apache** + **MySQL**.
-4. Download **Apache Tomcat 10.1** and unzip it, for example `C:\tomcat10`.
+4. Download **Apache Tomcat 10.1** only if you want to deploy a WAR yourself. It is optional. The green Run button uses embedded Tomcat.
 5. Optional: install Maven, or use the Maven bundled with IntelliJ.
 
 ---
@@ -46,6 +48,15 @@ Do not change `password.salt` unless you also re-hash the passwords in SQL.
    - Confirm it is a Maven module with packaging `war`.
 
 If Maven did not import: right-click `pom.xml` → **Add as Maven Project**.
+
+Then run the app:
+
+1. Open `src/main/java/com/sunrisedental/SunriseDentalApp.java`.
+2. Click the green triangle next to `public static void main`.
+3. Open `http://localhost:8080/`
+4. Login `admin` / `Admin@123`
+
+If the green triangle is missing: right-click `SunriseDentalApp.java` → **Run ‘SunriseDentalApp.main()’**.
 
 ---
 
@@ -87,8 +98,9 @@ Create folders if they do not exist:
 In **Project** view, switch to **Packages**.
 
 1. Right-click `src/main/java` → **New → Package**
-2. Type `com.sunrisedental.model` → Enter
+2. Type `com.sunrisedental` → Enter, then create `SunriseDentalApp` (this is the only class with `main` — click Run on it).
 3. Repeat for:
+   - `com.sunrisedental.model`
    - `com.sunrisedental.dao`
    - `com.sunrisedental.servlet`
    - `com.sunrisedental.filter`
@@ -97,6 +109,12 @@ In **Project** view, switch to **Packages**.
 ### D4. Create each Java class
 
 Right-click the package → **New → Java Class** (or **New → Servlet** then replace the body). Copy the matching file from this repo.
+
+**com.sunrisedental**
+
+| Class               | Purpose                                      |
+|---------------------|----------------------------------------------|
+| `SunriseDentalApp`  | Click Run here. Starts the website on port 8080 |
 
 **model**
 

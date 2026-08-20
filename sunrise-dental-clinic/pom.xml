@@ -37,6 +37,18 @@
             <artifactId>gson</artifactId>
             <version>2.11.0</version>
         </dependency>
+
+        <!-- Lets you click Run on SunriseDentalApp in IntelliJ (no Tomcat plugin needed). -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>10.1.28</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>10.1.28</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -56,6 +68,19 @@
                 <version>3.4.0</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <packagingExcludes>
+                        WEB-INF/lib/tomcat-embed-*.jar,
+                        WEB-INF/lib/tomcat-annotations-api-*.jar,
+                        WEB-INF/lib/ecj-*.jar
+                    </packagingExcludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <mainClass>com.sunrisedental.SunriseDentalApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>
