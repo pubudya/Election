@@ -1,0 +1,19 @@
+OPEN THIS FOLDER IN INTELLIJ
+============================
+
+1. Unzip sunrise-dental-clinic.zip. You should get a folder named sunrise-dental-clinic.
+2. In IntelliJ IDEA: File → Open → select that sunrise-dental-clinic folder (the one that contains pom.xml).
+3. Trust the project. Wait for Maven to import (bottom-right).
+4. Project SDK: File → Project Structure → Project → SDK 17 (or newer).
+5. Import the database: XAMPP phpMyAdmin → Import → database/sunrise_dental.sql
+6. Run with Tomcat 10.1. Full steps: INTELLIJ_SETUP.md
+
+Login: admin / Admin@123    or    staff / Staff@123
+URL after deploy: http://localhost:8080/sunrise-dental-clinic/
+
+Java packages (already created with files inside):
+  com.sunrisedental.model
+  com.sunrisedental.dao
+  com.sunrisedental.servlet
+  com.sunrisedental.filter
+  com.sunrisedental.util
