@@ -1,33 +1,46 @@
-OPEN THIS FOLDER IN INTELLIJ
-============================
+OPEN IN INTELLIJ — READ THIS FIRST
+=================================
 
-1. Unzip sunrise-dental-clinic.zip. You should get a folder named sunrise-dental-clinic.
-2. In IntelliJ IDEA: File → Open → select that sunrise-dental-clinic folder (the one that contains pom.xml).
-3. Trust the project. Wait for Maven to import (bottom-right).
-4. File → Project Structure → Project → SDK 17 (or newer). Apply.
-5. Import the database: XAMPP phpMyAdmin → Import → database/sunrise_dental.sql
-   (Start MySQL in XAMPP first.)
+The error "Could not find or load main class" happens when IntelliJ
+runs Java with no project classpath. Do not click Run on a single
+.java file until Maven has imported the project.
 
-HOW TO RUN (fixes "file in the editor is not runnable")
--------------------------------------------------------
-Do NOT click Run on index.html, pom.xml, or a servlet.
+FIX (do these in order)
+-----------------------
+1. Close the current IntelliJ window.
 
-Open this file:
-  src/main/java/com/sunrisedental/SunriseDentalApp.java
+2. File → Open → select the folder sunrise-dental-clinic
+   (the folder that CONTAINS pom.xml and run.bat).
+   Do not open the parent Election folder. Do not open one .java file.
 
-Click the green triangle next to:
-  public static void main(String[] args)
+3. If IntelliJ asks "Load Maven Project?" click Trust / Load.
 
-Or use the run configuration:  Run Sunrise Dental Clinic
+4. View → Tool Windows → Maven
+   Click the Reload All Maven Projects button (two arrows).
+   Wait until "sunrise-dental-clinic" appears and dependencies finish.
 
-Then open: http://localhost:8080/
+5. File → Project Structure → Project
+   SDK = 21 (your C:\jdk-21)
+   Language level = 17
+   Apply → OK
+
+6. Build → Rebuild Project
+
+7. Top-right run menu → choose "Run Sunrise Dental Clinic"
+   (this is a Maven run, not a green-triangle on HTML).
+   Click the green Run button.
+
+8. Open http://localhost:8080/
+   Login: admin / Admin@123
+
+EASIEST FALLBACK (no IntelliJ run button)
+-----------------------------------------
+Double-click run.bat in the project folder.
+Or in IntelliJ Terminal:
+
+  mvnw.cmd compile exec:java
+
+If JAVA_HOME is missing, run.bat already tries C:\jdk-21.
+
 Login: admin / Admin@123    or    staff / Staff@123
-Stop: click the red square in IntelliJ.
-
-Java packages (already created with files inside):
-  com.sunrisedental            ← RUN SunriseDentalApp here
-  com.sunrisedental.model
-  com.sunrisedental.dao
-  com.sunrisedental.servlet
-  com.sunrisedental.filter
-  com.sunrisedental.util
+Start MySQL in XAMPP and import database\sunrise_dental.sql first.

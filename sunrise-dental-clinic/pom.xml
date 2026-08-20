@@ -7,7 +7,7 @@
     <groupId>com.sunrisedental</groupId>
     <artifactId>sunrise-dental-clinic</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>Sunrise Dental Clinic</name>
     <description>Appointment and patient management system for Sunrise Dental Clinic, Colombo</description>
 
@@ -18,12 +18,11 @@
     </properties>
 
     <dependencies>
-        <!-- Tomcat 10 provides this at runtime. Do not copy it into the WAR. -->
+        <!-- Servlet API (also provided by embedded Tomcat). -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -64,15 +63,14 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.4.0</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
                 <configuration>
-                    <failOnMissingWebXml>false</failOnMissingWebXml>
-                    <packagingExcludes>
-                        WEB-INF/lib/tomcat-embed-*.jar,
-                        WEB-INF/lib/tomcat-annotations-api-*.jar,
-                        WEB-INF/lib/ecj-*.jar
-                    </packagingExcludes>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.sunrisedental.SunriseDentalApp</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
@@ -81,6 +79,7 @@
                 <version>3.5.0</version>
                 <configuration>
                     <mainClass>com.sunrisedental.SunriseDentalApp</mainClass>
+                    <classpathScope>compile</classpathScope>
                 </configuration>
             </plugin>
         </plugins>

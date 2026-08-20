@@ -31,13 +31,15 @@ You do **not** need a separate Tomcat install to run the project. `SunriseDental
 
 ## Quick start in IntelliJ
 
-If IntelliJ says **“file in the editor is not runnable”**, you clicked HTML, CSS, or a servlet. Those files are not programs.
+## Quick start in IntelliJ
+
+If you see **Could not find or load main class**, IntelliJ ran Java without the Maven classpath. Open the folder that contains `pom.xml`, reload Maven, then use the run configuration **Run Sunrise Dental Clinic** (Maven `compile exec:java`). Or double-click `run.bat`.
 
 1. Import `database/sunrise_dental.sql` in phpMyAdmin (start MySQL in XAMPP).
 2. **File → Open** the `sunrise-dental-clinic` folder (the one with `pom.xml`).
-3. Wait for Maven import. Set Project SDK to 17+.
-4. Open `src/main/java/com/sunrisedental/SunriseDentalApp.java`.
-5. Click the green Run triangle next to `main`.
+3. Maven tool window → Reload. Set Project SDK to **21** (or 17+).
+4. **Build → Rebuild Project**.
+5. Run configuration: **Run Sunrise Dental Clinic**.
 6. Browser: `http://localhost:8080/`  
    Login: `admin` / `Admin@123`
 
